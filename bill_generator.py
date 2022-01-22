@@ -14,10 +14,10 @@ while(True):
         print(f"Your bill total is {sum} {currency}. Thanks for shopping!")
         name = input("Enter the name of your customer you want to save: \n")
         shop_name = input("Enter the name of your shop: \n")
-        discountConfirm = input("Do you want to provide any discount ? (y for yes or n for no)")
+        discountConfirm = input("Do you want to provide any discount ? (y for yes or n for no) \t")
         if discountConfirm == "y": # If the discountConfirm is input is y, then ask for discount
-            discount = input("Enter the discount (excluding % \\sign) \n")
-            new_sum = sum*(int(discount)/100) # Calculate the new bill amount after the entry of discount
+            discount = input("Enter the discount (excluding percentage sign) \n")
+            new_sum = sum - sum*(int(discount)/100) # Calculate the new bill amount after the entry of discount
             if not os.path.exists(f'{os.getcwd()}\\mybills'):
                 os.mkdir(f'{os.getcwd()}\\mybills') # Generates a folder mybills in the current working directory
                 save_path = f'{os.getcwd()}\\mybills'
@@ -43,7 +43,7 @@ Visted on: {str(datetime.now())}
 ----------
 Thank you for visiting our store
 ----------
-Copyright © Lakshyaraj Dash {int(datetime.today().year)} - {int(datetime.today().year) + 1}''')
+Copyright @ Lakshyaraj Dash {int(datetime.today().year)} - {int(datetime.today().year) + 1}''')
         
         if discountConfirm == "n": # If the discountConfirm is input is n, then set discount to no discount
             if not os.path.exists(f'{os.getcwd()}\\mybills'):
